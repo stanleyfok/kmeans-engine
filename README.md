@@ -6,7 +6,7 @@
   [![David deps][david-image]][david-url]
   [![npm download][download-image]][download-url]
 
-K-means clustering aims to partition n observations into k clusters in which each observation belongs to the cluster with the nearest mean.
+[K-means clustering](https://en.wikipedia.org/wiki/K-means_clustering) aims to partition n observations into k clusters in which each observation belongs to the cluster with the nearest mean.
 
 Most of the other implementation takes a N x M matrix (a 2d array) as input. However, if the data matrix is sparse, it would consumed a lot of memory when creating the N x M matrix. For example, after td-idf vectors of text documents actually forms a very large sparse matrix. The program will take much time to allocate the 2d array and will even quit if there is not enough memory.
 
@@ -24,28 +24,31 @@ const kmeans = require('kmeans-object');
 //array of engineers and their skills level
 const engineers = [
   // frontend engineers
-  { html: 5, angular: 5, react: 3, css: 3, },
-  { html: 4, react: 5, css: 4, },
-  { html: 4, react: 5, vue: 4, css: 5, },
-  { html: 3, angular: 3, react: 4, vue: 2, css: 3, },
+  { html: 5, angular: 5, react: 3, css: 3 },
+  { html: 4, react: 5, css: 4 },
+  { html: 4, react: 5, vue: 4, css: 5 },
+  { html: 3, angular: 3, react: 4, vue: 2, css: 3 },
+  
   // backend engineers
-  { nodejs: 5, python: 3, mongo: 5, mysql: 4, redis: 3, },
-  { java: 5, php: 4, ruby: 5, mongo: 3, mysql: 5, },
-  { python: 5, php: 4, ruby: 3, mongo: 5, mysql: 4, oracle: 4, },
-  { java: 5, csharp: 3, oracle: 5, mysql: 5, mongo: 4, },
+  { nodejs: 5, python: 3, mongo: 5, mysql: 4, redis: 3 },
+  { java: 5, php: 4, ruby: 5, mongo: 3, mysql: 5 },
+  { python: 5, php: 4, ruby: 3, mongo: 5, mysql: 4, oracle: 4 },
+  { java: 5, csharp: 3, oracle: 5, mysql: 5, mongo: 4 },
+  
   // mobile engineers
-  { objc: 3, swift: 5, xcode: 5, crashlytics: 3, firebase: 5, reactnative: 4, },
-  { java: 4, swift: 5, androidstudio: 4, },
-  { objc: 5, java: 4, swift: 3, androidstudio: 4, xcode: 4, firebase: 4, },
-  { objc: 3, java: 5, swift: 3, xcode: 4, apteligent: 4, },
+  { objc: 3, swift: 5, xcode: 5, crashlytics: 3, firebase: 5, reactnative: 4 },
+  { java: 4, swift: 5, androidstudio: 4 },
+  { objc: 5, java: 4, swift: 3, androidstudio: 4, xcode: 4, firebase: 4 },
+  { objc: 3, java: 5, swift: 3, xcode: 4, apteligent: 4 },
+  
   // devops
-  { docker: 5, kubernetes: 4, aws: 4, ansible: 3, linux: 4, },
-  { docker: 4, marathon: 4, aws: 4, jenkins: 5, },
-  { docker: 3, marathon: 4, heroku: 4, bamboo: 4, jenkins: 4, nagios: 3, },
-  { marathon: 4, heroku: 4, bamboo: 4, jenkins: 4, linux: 3, puppet: 4, nagios: 5, },
+  { docker: 5, kubernetes: 4, aws: 4, ansible: 3, linux: 4 },
+  { docker: 4, marathon: 4, aws: 4, jenkins: 5 },
+  { docker: 3, marathon: 4, heroku: 4, bamboo: 4, jenkins: 4, nagios: 3 },
+  { marathon: 4, heroku: 4, bamboo: 4, jenkins: 4, linux: 3, puppet: 4, nagios: 5 }
 ];
 
-kmeans.clusterize(numbers, 3, (err, res) => {
+kmeans.clusterize(numbers, 4, (err, res) => {
   console.log(res);
 });
 /*
