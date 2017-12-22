@@ -43,8 +43,11 @@ const engineers = [
 
 // k: number of clusters
 // debug: show debug message in console or not, default is false
-kmeans.clusterize(numbers, { k: 4, debug: true }, (err, res) => {
-  console.log(res);
+kmeans.clusterize(engineers, { k: 4, debug: true }, (err, res) => {
+  console.log('----- Results -----');
+  console.log(`Iterations: ${res.iterations}`);
+  console.log('Centroids: ');
+  console.log(res.clusters);
 });
 /*
 {
