@@ -87,6 +87,8 @@ npm run test
 
 ## To-Dos
 * add a bigger fixture file and create another example
+* enhance initial centroid picking
+* speed optimisation
 
 ## Authors
 
