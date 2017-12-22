@@ -1,7 +1,7 @@
 {
   "name": "kmeans-object",
   "version": "1.0.0",
-  "description": "KMeans Clustering",
+  "description": "Scalable kmeans clustering algorithm in js using javascript objects as input vectors",
   "main": "index.js",
   "directories": {
     "lib": "lib"
@@ -13,7 +13,12 @@
   },
   "keywords": [
     "kmeans",
-    "clustering"
+    "clustering",
+    "cluster",
+    "data",
+    "mining",
+    "machine",
+    "learning"
   ],
   "author": "Stanley Fok",
   "license": "MIT",
