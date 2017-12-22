@@ -9,7 +9,7 @@
   "scripts": {
     "eslint": "./node_modules/.bin/eslint '**/*.js'",
     "eslint-fix": "./node_modules/.bin/eslint --fix '**/*.js'",
-    "test": "./node_modules/.bin/mocha test"
+    "test": "./node_modules/.bin/mocha test/**/*.js"
   },
   "keywords": [
     "kmeans",
