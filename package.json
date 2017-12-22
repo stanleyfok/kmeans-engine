@@ -1,6 +1,6 @@
 {
   "name": "kmeans-engine",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "Scalable kmeans clustering algorithm in js using objects as input vectors, tailor made for sparse matrix",
   "homepage": "https://github.com/stanleyfok/kmeans-engine",
   "repository": {
