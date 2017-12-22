@@ -46,31 +46,31 @@ const engineers = [
 kmeans.clusterize(engineers, { k: 4, debug: true }, (err, res) => {
   console.log('----- Results -----');
   console.log(`Iterations: ${res.iterations}`);
-  console.log('Centroids: ');
+  console.log('Clusters: ');
   console.log(res.clusters);
 });
 /*
-{
-  iterations: 3,
-  clusters: [
-    {
-      centroid: { html: 4, angular: 2, react: 4.25, css: 3.75, vue: 1.5 },
-      vectorIds: [ 0, 1, 2, 3 ]
-    },
-    {
-      centroid: { nodejs: 1.25, python: 2, mongo: 4.25, mysql: 4.5, redis: 0.75, java: 2.5, php: 2, ruby: 2, oracle: 2.25, csharp: 0.75 },
-      vectorIds: [ 4, 5, 6, 7 ]
-    },
-    {
-      centroid: { docker: 3,kubernetes: 1,aws: 2,ansible: 0.75,linux: 1.75,marathon: 3,jenkins: 3.25,heroku: 2,bamboo: 2,nagios: 2,puppet: 1 },
-      vectorIds: [ 12, 13, 14, 15 ]
-    },
-    {
-      centroid: { objc: 2.75, swift: 4, xcode: 3.25, crashlytics: 0.75, firebase: 2.25, reactnative: 1, java: 3.25, androidstudio: 2, apteligent: 1 },
-      vectorIds: [ 8, 9, 10, 11 ]
-    }
-  ]
-}
+----- Results -----
+Iterations: 3
+Clusters:
+[
+  {
+    centroid: { html: 4, angular: 2, react: 4.25, css: 3.75, vue: 1.5 },
+    vectorIds: [ 0, 1, 2, 3 ]
+  },
+  {
+    centroid: { nodejs: 1.25, python: 2, mongo: 4.25, mysql: 4.5, redis: 0.75, java: 2.5, php: 2, ruby: 2, oracle: 2.25, csharp: 0.75 },
+    vectorIds: [ 4, 5, 6, 7 ]
+  },
+  {
+    centroid: { docker: 3,kubernetes: 1,aws: 2,ansible: 0.75,linux: 1.75,marathon: 3,jenkins: 3.25,heroku: 2,bamboo: 2,nagios: 2,puppet: 1 },
+    vectorIds: [ 12, 13, 14, 15 ]
+  },
+  {
+    centroid: { objc: 2.75, swift: 4, xcode: 3.25, crashlytics: 0.75, firebase: 2.25, reactnative: 1, java: 3.25, androidstudio: 2, apteligent: 1 },
+    vectorIds: [ 8, 9, 10, 11 ]
+  }
+]
 */
 ```
 
