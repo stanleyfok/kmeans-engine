@@ -53,7 +53,7 @@ kmeans.clusterize(numbers, 4, (err, res) => {
 });
 /*
 {
-  iterations: 1,
+  iterations: 3,
   clusters: [
     {
       centroid: { html: 4, angular: 2, react: 4.25, css: 3.75, vue: 1.5 },
