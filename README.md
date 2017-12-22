@@ -2,6 +2,7 @@ KMeans Engine
 =======
 
 [![Build Status](https://travis-ci.org/NaturalNode/natural.png?branch=master)](https://travis-ci.org/NaturalNode/natural)
+[![NPM version](https://img.shields.io/npm/v/kmeans-engine.svg)](https://www.npmjs.com/package/kmeans-engine)
 
 This k-means javascript implementation is optimised for large and sparse data set by using array of objects as input.
 
