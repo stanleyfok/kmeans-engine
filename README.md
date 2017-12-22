@@ -1,4 +1,4 @@
-# KMeans Object
+# KMeans Engine
 
   [![NPM version][npm-image]][npm-url]
   [![build status][travis-image]][travis-url]
@@ -12,12 +12,12 @@ Most of the other implementation takes a N x M matrix (a 2d array) as input. How
 
 ## Installation
 
-`npm install kmeans-object`
+`npm install kmeans-engine`
 
 ## Usage
 
 ```js
-const kmeans = require('kmeans-object');
+const kmeans = require('kmeans-engine');
 
 // array of objects
 // engineers and their skills level
