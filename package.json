@@ -20,7 +20,7 @@
     "machine",
     "learning"
   ],
-  "author": "Stanley Fok",
+  "author": "Stanley Fok <stanleyfok@gmail.com> (https://github.com/stanleyfok)",
   "license": "MIT",
   "dependencies": {
     "underscore": "^1.8.3"
