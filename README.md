@@ -6,11 +6,9 @@
   [![David deps][david-image]][david-url]
   [![npm download][download-image]][download-url]
 
-[K-means clustering](https://en.wikipedia.org/wiki/K-means_clustering) aims to partition n observations into k clusters in which each observation belongs to the cluster with the nearest mean.
+This k-means javascript implementation is optimised for large and sparse data set by using array of objects as input. 
 
 Most of the other implementation takes a N x M matrix (a 2d array) as input. However, if the data matrix is sparse, it would consumed a lot of memory when creating the N x M matrix. For example, after td-idf vectors of text documents actually forms a very large sparse matrix. The program will take much time to allocate the 2d array and will even quit if there is not enough memory.
-
-This k-means javascript implementation is optimised for large and sparse data set by using array of objects as input.
 
 ## Installation
 
@@ -87,8 +85,7 @@ npm run test
 ```
 
 ## To-Dos
-* support debug mode, so be able to see the progress of the iterations
-* add a bigger fixture file create a better example
+* add a bigger fixture file and create another example
 
 ## Authors
 
