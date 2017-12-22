@@ -67,7 +67,7 @@ Clusters:
     vectorIds: [ 4, 5, 6, 7 ]
   },
   {
-    centroid: { docker: 3,kubernetes: 1,aws: 2,ansible: 0.75,linux: 1.75,marathon: 3,jenkins: 3.25,heroku: 2,bamboo: 2,nagios: 2,puppet: 1 },
+    centroid: { docker: 3, kubernetes: 1, aws: 2, ansible: 0.75, linux: 1.75, marathon: 3, jenkins: 3.25,heroku: 2, bamboo: 2, nagios: 2, puppet: 1 },
     vectorIds: [ 12, 13, 14, 15 ]
   },
   {
