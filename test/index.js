@@ -1,9 +1,5 @@
-
-
 const chai = require('chai');
-
 const should = chai.should();
-
 const kmeans = require('../');
 
 const set1 = require('../fixtures/engineers');

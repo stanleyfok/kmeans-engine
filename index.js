@@ -1,1 +1,1 @@
-module.exports = require('./lib/kmeans');
+module.exports = require('./lib/KMeansEngine');
