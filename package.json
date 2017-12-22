@@ -1,6 +1,6 @@
 {
   "name": "kmeans-engine",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "Scalable kmeans clustering algorithm in js using objects as input vectors, tailor made for sparse matrix",
   "homepage": "https://github.com/stanleyfok/kmeans-engine",
   "repository": {
@@ -25,7 +25,8 @@
   "author": "Stanley Fok <stanleyfok@gmail.com> (https://github.com/stanleyfok)",
   "license": "MIT",
   "dependencies": {
-    "underscore": "^1.8.3"
+    "underscore": "^1.8.3",
+    "vector-object": "^1.0.3"
   },
   "devDependencies": {
     "chai": "^4.1.2",
