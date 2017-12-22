@@ -4,9 +4,9 @@ KMeans Engine
 [![Build Status](https://travis-ci.org/NaturalNode/natural.png?branch=master)](https://travis-ci.org/NaturalNode/natural)
 [![NPM version](https://img.shields.io/npm/v/kmeans-engine.svg)](https://www.npmjs.com/package/kmeans-engine)
 
-This k-means javascript implementation is optimised for large and sparse data set by using array of objects as input.
+This k-means javascript implementation is optimised for large and sparse data set by using an array of objects to represent a sparse matrix.
 
-Most of the other implementations available in npm takes a N x M matrix (a 2d array) as input. However, if the data matrix is sparse, it would consumed a lot of memory when creating the N x M matrix. For example, td-idf vectors of text documents actually form a very large and sparse matrix. The program will take much time to allocate the 2d array and will even quit if there is not enough memory.
+Most of the other implementations available in npm take a N x M matrix (a 2d array) as input. However, if the data matrix is sparse, it would consumed a lot of memory when creating the N x M matrix. For example, td-idf vectors of text documents actually form a very large and sparse matrix. It will take much time to allocate the 2d array and will even quit if there is not enough memory.
 
 ## Installation
 
@@ -59,20 +59,20 @@ Iterations: 3
 Clusters:
 [
   {
-    centroid: { html: 4, angular: 2, react: 4.25, css: 3.75, vue: 1.5 },
-    vectorIds: [ 0, 1, 2, 3 ]
+    centroid: { docker: 3, kubernetes: 1, aws: 2, ansible: 0.75, linux: 1.75, marathon: 3, jenkins: 3.25,heroku: 2, bamboo: 2, nagios: 2, puppet: 1 },
+    vectorIds: [ 12, 13, 14, 15 ]
   },
   {
     centroid: { nodejs: 1.25, python: 2, mongo: 4.25, mysql: 4.5, redis: 0.75, java: 2.5, php: 2, ruby: 2, oracle: 2.25, csharp: 0.75 },
     vectorIds: [ 4, 5, 6, 7 ]
   },
   {
-    centroid: { docker: 3, kubernetes: 1, aws: 2, ansible: 0.75, linux: 1.75, marathon: 3, jenkins: 3.25,heroku: 2, bamboo: 2, nagios: 2, puppet: 1 },
-    vectorIds: [ 12, 13, 14, 15 ]
-  },
-  {
     centroid: { objc: 2.75, swift: 4, xcode: 3.25, crashlytics: 0.75, firebase: 2.25, reactnative: 1, java: 3.25, androidstudio: 2, apteligent: 1 },
     vectorIds: [ 8, 9, 10, 11 ]
+  },
+  {
+    centroid: { html: 4, angular: 2, react: 4.25, css: 3.75, vue: 1.5 },
+    vectorIds: [ 0, 1, 2, 3 ]
   }
 ]
 */
