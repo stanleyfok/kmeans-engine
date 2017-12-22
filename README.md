@@ -16,12 +16,13 @@ This k-means javascript implementation is optimised for large and sparse data se
 
 `npm install kmeans-object`
 
-## Example
+## Usage
 
 ```js
 const kmeans = require('kmeans-object');
 
-//array of engineers and their skills level
+// array of objects
+// engineers and their skills level
 const engineers = [
   // frontend engineers
   { html: 5, angular: 5, react: 3, css: 3 },
@@ -48,7 +49,9 @@ const engineers = [
   { marathon: 4, heroku: 4, bamboo: 4, jenkins: 4, linux: 3, puppet: 4, nagios: 5 }
 ];
 
-kmeans.clusterize(numbers, { k: 4 }, (err, res) => {
+// k: number of clusters
+// debug: show debug message in console or not, default is false
+kmeans.clusterize(numbers, { k: 4, debug: true }, (err, res) => {
   console.log(res);
 });
 /*
