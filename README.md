@@ -1,14 +1,18 @@
-# KMeans Engine
+KMeans Engine
+
+=======
+
+[![Build Status](https://travis-ci.org/NaturalNode/natural.png?branch=master)](https://travis-ci.org/NaturalNode/natural)
 
 This k-means javascript implementation is optimised for large and sparse data set by using array of objects as input.
 
 Most of the other implementations available in npm takes a N x M matrix (a 2d array) as input. However, if the data matrix is sparse, it would consumed a lot of memory when creating the N x M matrix. For example, after td-idf vectors of text documents actually forms a very large sparse matrix. The program will take much time to allocate the 2d array and will even quit if there is not enough memory.
 
-## Installation
+# Installation
 
 `npm install kmeans-engine`
 
-## Usage
+# Usage
 
 ```js
 const kmeans = require('kmeans-engine');
@@ -74,20 +78,20 @@ Clusters:
 */
 ```
 
-## Test
+# Test
 
 ```bash
 npm install
 npm run test
 ```
 
-## To-Dos
+# To-Dos
 * add a bigger fixture file and create another example
 
-## Authors
+# Authors
 
   - [Stanley Fok](https://github.com/stanleyfok)
 
-## License
+# License
 
   [MIT](./LICENSE)
