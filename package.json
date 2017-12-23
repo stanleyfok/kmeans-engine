@@ -26,7 +26,7 @@
   "license": "MIT",
   "dependencies": {
     "underscore": "^1.8.3",
-    "vector-object": "^1.1.0"
+    "vector-object": "^1.1.2"
   },
   "devDependencies": {
     "chai": "^4.1.2",

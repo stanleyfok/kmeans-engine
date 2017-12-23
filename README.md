@@ -12,7 +12,7 @@ Most of the other implementations available in npm take a N x M matrix (a 2d arr
 
 `npm install kmeans-engine`
 
-## Change Log
+## Major Change Log
 
 #### 1.1.0
 
