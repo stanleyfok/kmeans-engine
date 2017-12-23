@@ -6,7 +6,7 @@ const kmeans = require('../');
 const set1 = require('../fixtures/engineers');
 const set2 = require('../fixtures/2d-numbers');
 
-describe('kmeans', () => {
+describe('KMeansEngine', () => {
   describe('input validation', () => {
     it('should only accept array of objects', () => {
       (() => {

@@ -96,7 +96,6 @@ npm run test
 * enhance initial centroid picking
 * speed optimisation
 * support max iterations in options
-* unit test for cluster class
 
 ## Authors
 
