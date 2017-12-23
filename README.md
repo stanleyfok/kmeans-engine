@@ -55,6 +55,7 @@ const engineers = [
   { marathon: 4, heroku: 4, bamboo: 4, jenkins: 4, linux: 3, puppet: 4, nagios: 5 }
 ];
 
+// accepted options:
 // k: number of clusters
 // maxIterations (optional): max number of iterations
 // debug (optional): show debug message in console or not, default is false
