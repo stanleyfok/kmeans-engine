@@ -12,7 +12,11 @@ Most of the other implementations available in npm take a N x M matrix (a 2d arr
 
 `npm install kmeans-engine`
 
-## Major Change Log
+## Major Change Logs
+
+#### 1.2.0
+
+Support maxIterations parameter in options
 
 #### 1.1.0
 
@@ -52,8 +56,9 @@ const engineers = [
 ];
 
 // k: number of clusters
-// debug: show debug message in console or not, default is false
-kmeans.clusterize(engineers, { k: 4, debug: true }, (err, res) => {
+// maxIterations (optional): max number of iterations
+// debug (optional): show debug message in console or not, default is false
+kmeans.clusterize(engineers, { k: 4, maxIterations: 5, debug: true }, (err, res) => {
   console.log('----- Results -----');
   console.log(`Iterations: ${res.iterations}`);
   console.log('Clusters: ');
@@ -92,10 +97,8 @@ npm run test
 ```
 
 ## To-Dos
-* add a bigger fixture file and create another example
 * enhance initial centroid picking
 * speed optimisation
-* support max iterations in options
 
 ## Authors
 

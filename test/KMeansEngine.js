@@ -41,6 +41,12 @@ describe('KMeansEngine', () => {
         kmeans.clusterize(set1, { k: set1.length + 1 }, () => {});
       }).should.to.throw('Cluster size should be smaller than the vector size');
     });
+
+    it('should only accept max iterations as positive integer', () => {
+      (() => {
+        kmeans.clusterize(set1, { k: 3, maxIterations: -1 }, () => {});
+      }).should.to.throw('Max iterations should be a positive integer');
+    });
   });
 
   describe('clusterize result', () => {
@@ -71,6 +77,24 @@ describe('KMeansEngine', () => {
           cluster.should.to.have.property('centroid');
           cluster.should.to.have.property('vectorIds');
         });
+
+        done();
+      });
+    });
+
+    it('should return result if max iterations has been reached', (done) => {
+      kmeans.clusterize(set2, { k: 3, maxIterations: 1 }, (err, res) => {
+        should.not.exist(err);
+        res.should.to.have.property('iterations');
+        res.should.to.have.property('clusters');
+
+        res.clusters.should.to.have.lengthOf(3);
+        res.clusters.forEach((cluster) => {
+          cluster.should.to.have.property('centroid');
+          cluster.should.to.have.property('vectorIds');
+        });
+
+        res.iterations.should.to.be.equal(1);
 
         done();
       });
