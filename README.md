@@ -12,6 +12,12 @@ Most of the other implementations available in npm take a N x M matrix (a 2d arr
 
 `npm install kmeans-engine`
 
+## Change Log
+
+#### 1.1.0
+
+Updated to a newer version of [vector-object](https://www.npmjs.com/package/vector-object)
+
 ## Usage
 
 ```js
