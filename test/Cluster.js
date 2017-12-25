@@ -20,7 +20,7 @@ describe('Cluster', () => {
     cluster.calculateCentroids(vectors);
 
     it('should be able to calculate centroids correctly', () => {
-      cluster.centroid.should.to.deep.equal({ x: 1.75, y: 1.5 });
+      cluster.centroid.toObject().should.to.deep.equal({ x: 1.75, y: 1.5 });
     });
 
     it('should be able to tell centroid has moved', () => {
