@@ -14,6 +14,10 @@ Most of the other implementations available in npm take a N x M matrix (a 2d arr
 
 ## Major Change Logs
 
+#### 1.3.0
+
+Update to newer version of [vector-object](https://www.npmjs.com/package/vector-object)
+
 #### 1.2.0
 
 Support maxIterations parameter in options
