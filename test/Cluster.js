@@ -12,10 +12,10 @@ describe('Cluster', () => {
 
     const cluster = new Cluster(new Vector());
 
-    cluster.addVectorId(0);
-    cluster.addVectorId(1);
-    cluster.addVectorId(2);
-    cluster.addVectorId(3);
+    cluster.addVector(0, vectors[0]);
+    cluster.addVector(1, vectors[1]);
+    cluster.addVector(2, vectors[2]);
+    cluster.addVector(3, vectors[3]);
 
     cluster.calculateCentroids(vectors);
 
