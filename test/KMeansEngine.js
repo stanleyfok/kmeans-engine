@@ -1,3 +1,4 @@
+const _ = require('underscore');
 const chai = require('chai');
 
 const should = chai.should();
@@ -46,6 +47,28 @@ describe('KMeansEngine', () => {
       (() => {
         kmeans.clusterize(set1, { k: 3, maxIterations: -1 }, () => {});
       }).should.to.throw('Max iterations should be a positive integer');
+    });
+
+    it('should only accept initial centroids as array of objects', () => {
+      (() => {
+        kmeans.clusterize(set1, { k: 2, initialCentroids: {} }, () => {});
+      }).should.to.throw('Initial centroids should be array of length equal to cluster size');
+
+      (() => {
+        kmeans.clusterize(set1, { k: 2, initialCentroids: [() => {}, () => {}] }, () => {});
+      }).should.to.throw('Centroids should be array of objects');
+
+      (() => {
+        kmeans.clusterize(set1, { k: 2, initialCentroids: ['abc', 'def'] }, () => {});
+      }).should.to.throw('Centroids should be array of objects');
+
+      (() => {
+        kmeans.clusterize(set1, { k: 2, initialCentroids: [123, 456.7] }, () => {});
+      }).should.to.throw('Centroids should be array of objects');
+
+      (() => {
+        kmeans.clusterize(set1, { k: 2, initialCentroids: [true, true] }, () => {});
+      }).should.to.throw('Centroids should be array of objects');
     });
   });
 
@@ -97,6 +120,37 @@ describe('KMeansEngine', () => {
         res.iterations.should.to.be.equal(1);
 
         done();
+      });
+    });
+
+    it('should return same result given same initial centroids', (done) => {
+      const initialCentroids = [{x: 1, y: 0}, {x: 0, y: 1}, {x: 1, y: 1}];
+      kmeans.clusterize(set2, { k: 3, maxIterations: 1, initialCentroids: initialCentroids}, (err1, res1) => {
+        should.not.exist(err1);
+        res1.should.to.have.property('iterations');
+        res1.should.to.have.property('clusters');
+
+        res1.clusters.should.to.have.lengthOf(3);
+        res1.clusters.forEach((cluster1) => {
+          cluster1.should.to.have.property('centroid');
+          cluster1.should.to.have.property('vectorIds');
+        });
+
+        kmeans.clusterize(set2, { k: 3, maxIterations: 1, initialCentroids: initialCentroids }, (err2, res2) => {
+          should.not.exist(err2);
+          res2.should.to.have.property('iterations');
+          res2.should.to.have.property('clusters');
+
+          res2.clusters.should.to.have.lengthOf(3);
+          res2.clusters.forEach((cluster2) => {
+            cluster2.should.to.have.property('centroid');
+            cluster2.should.to.have.property('vectorIds');
+          });
+
+          res1.should.deep.equal(res2);
+          done();
+
+        });
       });
     });
   });
