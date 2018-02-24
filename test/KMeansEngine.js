@@ -148,8 +148,8 @@ describe('KMeansEngine', () => {
           });
 
           res1.should.deep.equal(res2);
-          done();
 
+          done();
         });
       });
     });
