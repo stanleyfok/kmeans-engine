@@ -1,4 +1,3 @@
-const _ = require('underscore');
 const chai = require('chai');
 
 const should = chai.should();
@@ -124,8 +123,13 @@ describe('KMeansEngine', () => {
     });
 
     it('should return same result given same initial centroids', (done) => {
-      const initialCentroids = [{x: 1, y: 0}, {x: 0, y: 1}, {x: 1, y: 1}];
-      kmeans.clusterize(set2, { k: 3, maxIterations: 1, initialCentroids: initialCentroids}, (err1, res1) => {
+      const initialCentroids = [{ x: 1, y: 0 }, { x: 0, y: 1 }, { x: 1, y: 1 }];
+
+      kmeans.clusterize(set2, {
+        k: 3,
+        maxIterations: 1,
+        initialCentroids,
+      }, (err1, res1) => {
         should.not.exist(err1);
         res1.should.to.have.property('iterations');
         res1.should.to.have.property('clusters');
@@ -136,7 +140,11 @@ describe('KMeansEngine', () => {
           cluster1.should.to.have.property('vectorIds');
         });
 
-        kmeans.clusterize(set2, { k: 3, maxIterations: 1, initialCentroids: initialCentroids }, (err2, res2) => {
+        kmeans.clusterize(set2, {
+          k: 3,
+          maxIterations: 1,
+          initialCentroids,
+        }, (err2, res2) => {
           should.not.exist(err2);
           res2.should.to.have.property('iterations');
           res2.should.to.have.property('clusters');

@@ -14,6 +14,10 @@ Most of the other implementations available in npm take a N x M matrix (a 2d arr
 
 ## What's New
 
+#### 1.4.0
+
+Support options to provide initial centroids. See details in [pull request](https://github.com/stanleyfok/kmeans-engine/pull/2)
+
 #### 1.3.0
 
 Update to newer version of [vector-object](https://www.npmjs.com/package/vector-object)
@@ -62,6 +66,7 @@ const engineers = [
 // accepted options:
 // k: number of clusters
 // maxIterations (optional): max number of iterations
+// initialCentroids (optional): an array of initial centroids in length of k
 // debug (optional): show debug message in console or not, default is false
 kmeans.clusterize(engineers, { k: 4, maxIterations: 5, debug: true }, (err, res) => {
   console.log('----- Results -----');
