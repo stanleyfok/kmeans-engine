@@ -175,7 +175,7 @@ describe('KMeansEngine', () => {
 
     it('should work asynchronously when specified explicitly', (done) => {
       var flag = false;
-      kmeans.clusterize(set2, { k: 3, maxIterations: 1, asynchronous: true }, () => {
+      kmeans.clusterize(set2, { k: 3, maxIterations: 1, synchronous: false }, () => {
         flag.should.be.equal(true);
 
         done();
@@ -186,13 +186,18 @@ describe('KMeansEngine', () => {
 
     it('should work synchronously when specified explicitly', (done) => {
       var flag = false;
-      kmeans.clusterize(set2, { k: 3, maxIterations: 12, asynchronous: false }, () => {
-        flag.should.be.equal(false);
+      const res = kmeans.clusterize(set2, { k: 3, maxIterations: 1, synchronous: true });
+      res.should.to.have.property('iterations');
+        res.should.to.have.property('clusters');
 
+        res.clusters.should.to.have.lengthOf(3);
+        res.clusters.forEach((cluster) => {
+          cluster.should.to.have.property('centroid');
+          cluster.should.to.have.property('vectorIds');
+        });
+
+        res.iterations.should.to.be.equal(1);
         done();
-      });
-      flag = true;
-
     });
   });
 });
