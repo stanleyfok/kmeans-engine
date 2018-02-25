@@ -161,5 +161,38 @@ describe('KMeansEngine', () => {
         });
       });
     });
+
+    it('should work asynchronously by default', (done) => {
+      var flag = false;
+      kmeans.clusterize(set2, { k: 3, maxIterations: 1 }, () => {
+        flag.should.be.equal(true);
+
+        done();
+      });
+      flag = true;
+
+    });
+
+    it('should work asynchronously when specified explicitly', (done) => {
+      var flag = false;
+      kmeans.clusterize(set2, { k: 3, maxIterations: 1, asynchronous: true }, () => {
+        flag.should.be.equal(true);
+
+        done();
+      });
+      flag = true;
+
+    });
+
+    it('should work synchronously when specified explicitly', (done) => {
+      var flag = false;
+      kmeans.clusterize(set2, { k: 3, maxIterations: 12, asynchronous: false }, () => {
+        flag.should.be.equal(false);
+
+        done();
+      });
+      flag = true;
+
+    });
   });
 });
