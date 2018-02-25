@@ -57,13 +57,13 @@ describe('KMeansEngine', () => {
     it('should only accept callback when called synchronously', () => {
       (() => {
         kmeans.clusterize(set1, { k: 3, synchronous: true }, () => {});
-      }).should.to.throw('Callback should be a function, only specified when Synchronous is true');
+      }).should.to.throw('Callback should be a function, only specified when Synchronous is false');
     });
 
     it('should only accept callback as a function', () => {
       (() => {
         kmeans.clusterize(set1, { k: 3},5);
-      }).should.to.throw('Callback should be a function, only specified when Synchronous is true');
+      }).should.to.throw('Callback should be a function, only specified when Synchronous is false');
     });
 
     it('should only accept initial centroids as array of objects', () => {
