@@ -48,6 +48,24 @@ describe('KMeansEngine', () => {
       }).should.to.throw('Max iterations should be a positive integer');
     });
 
+    it('should only accept synchronous as a boolean', () => {
+      (() => {
+        kmeans.clusterize(set1, { k: 3, synchronous: -1 }, () => {});
+      }).should.to.throw('Synchronous should be a boolean');
+    });
+
+    it('should only accept callback when called synchronously', () => {
+      (() => {
+        kmeans.clusterize(set1, { k: 3, synchronous: true }, () => {});
+      }).should.to.throw('Callback should be a function, only specified when Synchronous is false');
+    });
+
+    it('should only accept callback as a function', () => {
+      (() => {
+        kmeans.clusterize(set1, { k: 3},5);
+      }).should.to.throw('Callback should be a function, only specified when Synchronous is false');
+    });
+
     it('should only accept initial centroids as array of objects', () => {
       (() => {
         kmeans.clusterize(set1, { k: 2, initialCentroids: {} }, () => {});
@@ -160,6 +178,44 @@ describe('KMeansEngine', () => {
           done();
         });
       });
+    });
+
+    it('should work asynchronously by default', (done) => {
+      var flag = false;
+      kmeans.clusterize(set2, { k: 3, maxIterations: 1 }, () => {
+        flag.should.be.equal(true);
+
+        done();
+      });
+      flag = true;
+
+    });
+
+    it('should work asynchronously when specified explicitly', (done) => {
+      var flag = false;
+      kmeans.clusterize(set2, { k: 3, maxIterations: 1, synchronous: false }, () => {
+        flag.should.be.equal(true);
+
+        done();
+      });
+      flag = true;
+
+    });
+
+    it('should work synchronously when specified explicitly', (done) => {
+      var flag = false;
+      const res = kmeans.clusterize(set2, { k: 3, maxIterations: 1, synchronous: true });
+      res.should.to.have.property('iterations');
+        res.should.to.have.property('clusters');
+
+        res.clusters.should.to.have.lengthOf(3);
+        res.clusters.forEach((cluster) => {
+          cluster.should.to.have.property('centroid');
+          cluster.should.to.have.property('vectorIds');
+        });
+
+        res.iterations.should.to.be.equal(1);
+        done();
     });
   });
 });
