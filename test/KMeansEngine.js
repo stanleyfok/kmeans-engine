@@ -48,6 +48,24 @@ describe('KMeansEngine', () => {
       }).should.to.throw('Max iterations should be a positive integer');
     });
 
+    it('should only accept synchronous as a boolean', () => {
+      (() => {
+        kmeans.clusterize(set1, { k: 3, synchronous: -1 }, () => {});
+      }).should.to.throw('Synchronous should be a boolean');
+    });
+
+    it('should only accept callback when called synchronously', () => {
+      (() => {
+        kmeans.clusterize(set1, { k: 3, synchronous: true }, () => {});
+      }).should.to.throw('Callback should be a function, only specified when Synchronous is true');
+    });
+
+    it('should only accept callback as a function', () => {
+      (() => {
+        kmeans.clusterize(set1, { k: 3},5);
+      }).should.to.throw('Callback should be a function, only specified when Synchronous is true');
+    });
+
     it('should only accept initial centroids as array of objects', () => {
       (() => {
         kmeans.clusterize(set1, { k: 2, initialCentroids: {} }, () => {});
