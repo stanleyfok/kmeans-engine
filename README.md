@@ -14,6 +14,10 @@ Most of the other implementations available in npm take a N x M matrix (a 2d arr
 
 ## What's New
 
+#### 1.5.0
+
+Upgrade dependencies to fix security alerts
+
 #### 1.4.0
 
 Support options to provide initial centroids. See details in [pull request](https://github.com/stanleyfok/kmeans-engine/pull/2)
